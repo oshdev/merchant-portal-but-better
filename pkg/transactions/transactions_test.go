@@ -9,7 +9,7 @@ import (
 
 func Test_transaction(t *testing.T) {
 	t.Run("Test_transaction", func(t *testing.T) {
-		transactionsToTest := transactions.GetTransactions()
-		assert.NotZero(t, len(transactionsToTest))
+		ts := transactions.GetTransactions()
+		assert.NotZero(t, len(ts))
 	})
 }

@@ -1,5 +1,20 @@
 package transactions
 
-func GetTransactions() []int {
-	return []int{1, 3, 5}
+import "time"
+
+type Transaction struct {
+	Date   time.Time
+	Amount int
+}
+
+func GetTransactions() []Transaction {
+	return []Transaction{
+		{
+			Date:   time.Now(),
+			Amount: 20,
+		},
+		{
+			Date:   time.Now(),
+			Amount: 20,
+		}}
 }
