@@ -21,12 +21,12 @@ export default function Home({ transactions }: HomePageProps) {
 export const getServerSideProps: GetServerSideProps<
   HomePageProps
 > = async () => {
+  const transactions: Transaction[] = await fetch(
+    "http://localhost:8080/transactions"
+  ).then((res) => res.json());
   return {
     props: {
-      transactions: [
-        { amount: "5 million", date: new Date("2022-07-01").toISOString() },
-        { amount: "billions", date: new Date("2022-07-03").toISOString() },
-      ],
+      transactions,
     }, // will be passed to the page component as props
   };
 };
