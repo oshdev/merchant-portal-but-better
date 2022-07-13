@@ -1,7 +1,7 @@
 import React from "react";
 
-const TrasactionList = () => {
+const TransactionList = () => {
   return <div data-testid="transaction-list"></div>;
 };
 
-export default TrasactionList;
+export default TransactionList;
