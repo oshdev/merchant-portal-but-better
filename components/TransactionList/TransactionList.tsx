@@ -1,8 +1,8 @@
 import React from "react";
 
-type Transaction = {
+export type Transaction = {
   amount: string;
-  date: Date;
+  date: string;
 };
 
 type TransactionListProps = {
@@ -15,7 +15,9 @@ const TransactionList: React.FC<TransactionListProps> = ({ transactions }) => {
       {transactions.map((t) => (
         <li>
           <span>£{t.amount} </span>
-          <span>{new Intl.DateTimeFormat("en-GB").format(t.date)}</span>
+          <span>
+            {new Intl.DateTimeFormat("en-GB").format(new Date(t.date))}
+          </span>
         </li>
       ))}
     </ul>

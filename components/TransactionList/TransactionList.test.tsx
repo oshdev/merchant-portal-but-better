@@ -11,7 +11,9 @@ describe("Transaction list", () => {
     const randomAmount = Math.random().toString();
     const { getByText } = render(
       <TransactionList
-        transactions={[{ amount: randomAmount, date: new Date() }]}
+        transactions={[
+          { amount: randomAmount, date: new Date().toISOString() },
+        ]}
       />
     );
 
@@ -23,8 +25,8 @@ describe("Transaction list", () => {
     const { getByText } = render(
       <TransactionList
         transactions={[
-          { amount: randomAmount, date: new Date() },
-          { amount: randomAmount1, date: new Date() },
+          { amount: randomAmount, date: new Date().toISOString() },
+          { amount: randomAmount1, date: new Date().toISOString() },
         ]}
       />
     );
@@ -36,8 +38,8 @@ describe("Transaction list", () => {
     const { getByText } = render(
       <TransactionList
         transactions={[
-          { amount: "0", date: new Date("2022-07-01") },
-          { amount: "0", date: new Date("2022-07-02") },
+          { amount: "0", date: new Date("2022-07-01").toISOString() },
+          { amount: "0", date: new Date("2022-07-02").toISOString() },
         ]}
       />
     );
