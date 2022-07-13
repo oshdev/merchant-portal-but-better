@@ -3,8 +3,8 @@ package transactions
 import "time"
 
 type Transaction struct {
-	Date   time.Time
-	Amount int
+	Date   time.Time `json:"date"`
+	Amount int       `json:"amount"`
 }
 
 func GetTransactions() []Transaction {
