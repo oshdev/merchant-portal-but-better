@@ -7,7 +7,12 @@ export default function Home() {
       <Head>
         <title>Transaction List</title>
       </Head>
-      <TransactionList />
+      <TransactionList
+        transactions={[
+          { amount: "5 million", date: new Date("2022-07-01") },
+          { amount: "billions", date: new Date("2022-07-03") },
+        ]}
+      />
     </div>
   );
 }

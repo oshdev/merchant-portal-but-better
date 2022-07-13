@@ -11,14 +11,14 @@ type TransactionListProps = {
 
 const TransactionList: React.FC<TransactionListProps> = ({ transactions }) => {
   return (
-    <div data-testid="transaction-list">
+    <ul data-testid="transaction-list">
       {transactions.map((t) => (
-        <>
-          <p>£{t.amount}</p>
-          <p>{new Intl.DateTimeFormat("en-GB").format(t.date)}</p>
-        </>
+        <li>
+          <span>£{t.amount} </span>
+          <span>{new Intl.DateTimeFormat("en-GB").format(t.date)}</span>
+        </li>
       ))}
-    </div>
+    </ul>
   );
 };
 
