@@ -2,18 +2,14 @@ package transactions_test
 
 import (
 	"testing"
-	"transactions"
+
+	"github.com/alecthomas/assert/v2"
+	"github.com/oshdev/merchant-portal-but-better/pkg/transactions"
 )
 
 func Test_transaction(t *testing.T) {
-	
 	t.Run("Test_transaction", func(t *testing.T) {
-		transactions_to_test := transactions.GetTransactions()
-		
-		if len(transactions_to_test) == 0 {
-			t.Fatalf("Expected zero but got %d", transactions_to_test)
-		}
-
+		transactionsToTest := transactions.GetTransactions()
+		assert.NotZero(t, len(transactionsToTest))
 	})
-	
 }
