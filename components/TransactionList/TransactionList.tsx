@@ -1,15 +1,25 @@
 import React from "react";
 
 type Transaction = {
-    amount: string
-}
+  amount: string;
+  date: Date;
+};
 
 type TransactionListProps = {
-    transactions: Transaction[]
-}
+  transactions: Transaction[];
+};
 
-const TransactionList: React.FC<TransactionListProps> = ({transactions}) => {
-    return <div data-testid="transaction-list">{transactions.map((t) => <p>£{t.amount}</p>)}</div>;
-}
+const TransactionList: React.FC<TransactionListProps> = ({ transactions }) => {
+  return (
+    <div data-testid="transaction-list">
+      {transactions.map((t) => (
+        <>
+          <p>£{t.amount}</p>
+          <p>{new Intl.DateTimeFormat("en-GB").format(t.date)}</p>
+        </>
+      ))}
+    </div>
+  );
+};
 
 export default TransactionList;
